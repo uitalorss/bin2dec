@@ -1,0 +1,13 @@
+* {
+  font-family: 'Spline Sans', sans-serif;
+}
+
+body {
+  background: #2d3436;
+}
+
+main {
+  max-width: 600px;
+  margin: 0 auto;
+  display: grid;
+}
