@@ -29,6 +29,7 @@ form input {
   background: #2d3436;
   color: #81ecec;
   width: 30%;
+  border-radius: 5px;
 }
 
 form p {
@@ -42,4 +43,5 @@ form button {
   border: none;
   background: #2d3436;
   color: #81ecec;
+  border-radius: 5px;
 }
