@@ -1,6 +1,19 @@
-const valorBin = document.querySelector("#valor-bin");
+const valorBinario = document.querySelector("#valor-bin");
+const formBinToDec = document.querySelector("#formBinToDec")
 
-const handleClick = (event) =>{
+formBinToDec.addEventListener("submit", (event) => {
   event.preventDefault();
-  console.log(valorBin.value);
+  let binario = valorBinario.value;
+  try {
+    verifyField(binario);
+    console.log(binario);
+  } catch (error) {
+    alert(error.message);
+  }
+})
+
+const verifyField = (value) => {
+  if(value === ''){
+    throw new Error("Favor prencher o campo");
+  }
 }

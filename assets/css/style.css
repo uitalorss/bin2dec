@@ -38,7 +38,7 @@ form p {
   margin-bottom: 10px;
 }
 
-form button {
+.btn {
   padding: 10px 20px;
   border: none;
   background: #2d3436;
