@@ -6,7 +6,7 @@ formBinToDec.addEventListener("submit", (event) => {
   let binario = valorBinario.value;
   try {
     verifyField(binario);
-    verifySize(binario)
+    isBinary(binario);
     console.log(binario);
   } catch (error) {
     alert(error.message);
@@ -21,6 +21,14 @@ const verifyField = (value) => {
 
 const verifySize = (value) => {
   if(value.length > 8){
-    throw new Error("Quantidade de caracteres acima para ser binário");
+    throw new Error("Quantidade de caracteres acima para ser binário.");
+  }
+}
+
+isBinary = (value) => {
+  verifySize(value);
+  const valorParaTeste = value.split('').filter(value => (value === "0" || value === "1"));
+  if(valorParaTeste.length !== value.split('').length){
+    throw new Error("Valor inválido para binário")
   }
 }
