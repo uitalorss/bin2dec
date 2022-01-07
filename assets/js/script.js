@@ -7,6 +7,7 @@ formBinToDec.addEventListener("submit", (event) => {
   try {
     verifyField(binario);
     isBinary(binario);
+    calcToDecimal(binario)
     console.log(binario);
   } catch (error) {
     alert(error.message);
@@ -31,4 +32,13 @@ isBinary = (value) => {
   if(valorParaTeste.length !== value.split('').length){
     throw new Error("Valor inválido para binário")
   }
+}
+
+calcToDecimal = (value) => {
+  arrayBinary = value.split('').reverse();
+  let total = 0;
+  arrayBinary.forEach((element, index) => {
+    total += Number(element) * (Math.pow(2, index));
+  });
+    console.log(total)
 }
