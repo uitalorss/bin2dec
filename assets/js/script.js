@@ -1,14 +1,15 @@
 const valorBinario = document.querySelector("#valor-bin");
-const formBinToDec = document.querySelector("#formBinToDec")
+const formBinToDec = document.querySelector("#formBinToDec");
+const campoResultado = document.querySelector(".resultado");
 
 formBinToDec.addEventListener("submit", (event) => {
   event.preventDefault();
   let binario = valorBinario.value;
   try {
+    clearFields();
     verifyField(binario);
     isBinary(binario);
-    calcToDecimal(binario)
-    console.log(binario);
+    calcToDecimal(binario);
   } catch (error) {
     alert(error.message);
   }
@@ -40,5 +41,11 @@ calcToDecimal = (value) => {
   arrayBinary.forEach((element, index) => {
     total += Number(element) * (Math.pow(2, index));
   });
-    console.log(total)
+    const conteudoTotal = document.createElement("p");
+    conteudoTotal.innerHTML = `O valor de ${value} em decimal é: ${total}`;
+    campoResultado.appendChild(conteudoTotal);
+}
+
+clearFields = () => {
+  campoResultado.innerHTML = "";
 }
